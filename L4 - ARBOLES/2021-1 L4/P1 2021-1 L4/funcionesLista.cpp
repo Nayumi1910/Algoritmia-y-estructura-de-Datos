@@ -28,7 +28,7 @@ int longitud(struct Lista tad ){
 }
 
 /*CREA UN NUEVO ELEMENTO CON VALORES INICIALES*/
-struct Nodo * crearNodo(int elemento, struct Nodo * siguiente){
+struct Nodo * crearNodo(Elemento elemento, struct Nodo * siguiente){
 
     struct Nodo * nuevoNodo = new struct Nodo;
     
@@ -37,7 +37,7 @@ struct Nodo * crearNodo(int elemento, struct Nodo * siguiente){
     return nuevoNodo;
 }
 /*inserta un nodo siempre al inicio de la lista*/
-void insertarAlInicio(struct Lista & tad, int elemento) {
+void insertarAlInicio(struct Lista & tad, Elemento elemento) {
 
     /*Se va cambiar por la función crear nodo*/
     struct Nodo * nuevoNodo = new struct Nodo;
@@ -49,7 +49,7 @@ void insertarAlInicio(struct Lista & tad, int elemento) {
 }
 
 /*INSERTA UN ELEMENTO AL FINAL DE LA LISTA*/
-void insertarAlFinal(struct Lista & lista, int elemento){
+void insertarAlFinal(struct Lista & lista, Elemento elemento){
     struct Nodo * nuevoNodo = crearNodo(elemento, nullptr);
     Nodo * ultimoNodo = lista.cola; /*obtiene el último nodo*/
     if (ultimoNodo == nullptr){
@@ -63,7 +63,7 @@ void insertarAlFinal(struct Lista & lista, int elemento){
     lista.longitud++;  
 }
 
-int retornaCabeza(const struct Lista & lista){
+Elemento retornaCabeza(const struct Lista & lista){
     if (esListaVacia(lista)){
         cout<<"No existe la cabeza por que la cola está vacía"<<endl;
         exit(1);
@@ -110,7 +110,7 @@ void imprime(const struct Lista & lista){
     else{
         struct Nodo * recorrido = lista.cabeza;
         while(recorrido != nullptr){
-            cout<<recorrido->elemento<<" ";
+            cout<<recorrido->elemento.dato<<"-"<<recorrido->elemento.cant<<" ";
             recorrido = recorrido->siguiente;
         }   
     }

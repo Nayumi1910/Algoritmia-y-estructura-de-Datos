@@ -6,9 +6,12 @@
 
 #ifndef NODO_H
 #define NODO_H
-
+struct Elemento{
+    int dato;
+    int cant;
+};
 struct Nodo{
-    int elemento;
+    Elemento elemento;
     struct Nodo * siguiente;
 };
 

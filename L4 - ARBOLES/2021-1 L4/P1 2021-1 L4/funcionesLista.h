@@ -10,12 +10,12 @@
 void construir(struct Lista &);
 bool esListaVacia(const struct Lista & lista);
 int longitud(struct Lista tad );
-struct Nodo * crearNodo(int elemento, struct Nodo * siguiente);
-void insertarAlFinal(struct Lista & lista, int elemento);
+struct Nodo * crearNodo(Elemento elemento, struct Nodo * siguiente);
+void insertarAlFinal(struct Lista & lista, Elemento elemento);
 void imprime(const struct Lista & lista);
 void eliminaCabeza(struct Lista  & lista);
-int retornaCabeza(const struct Lista & lista);
+Elemento retornaCabeza(const struct Lista & lista);
 void destruirLista(struct Lista & lista);
-void insertarAlInicio(struct Lista & tad, int elemento);
+void insertarAlInicio(struct Lista & tad, Elemento elemento);
 #endif /* FUNCIONESLISTA_H */
 
